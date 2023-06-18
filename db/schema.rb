@@ -12,13 +12,18 @@
 
 ActiveRecord::Schema.define(version: 2023_06_18_011843) do
 
-  create_table "cart_product", force: :cascade do |t|
+  create_table "cart_products", force: :cascade do |t|
     t.integer "product_id"
     t.integer "cart_id"
     t.integer "qty"
   end
 
-  create_table "product", force: :cascade do |t|
+  create_table "product_category", force: :cascade do |t|
+    t.string "name"
+    t.string "desc"
+  end
+
+  create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "desc"
     t.string "color"
@@ -26,11 +31,6 @@ ActiveRecord::Schema.define(version: 2023_06_18_011843) do
     t.string "type"
     t.integer "price"
     t.integer "product_category_id"
-  end
-
-  create_table "product_category", force: :cascade do |t|
-    t.string "name"
-    t.string "desc"
   end
 
   create_table "reviews", force: :cascade do |t|
