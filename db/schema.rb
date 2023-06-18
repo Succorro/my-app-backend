@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_17_015624) do
+ActiveRecord::Schema.define(version: 2023_06_18_011843) do
 
   create_table "cart_product", force: :cascade do |t|
     t.integer "product_id"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2023_06_17_015624) do
     t.string "desc"
   end
 
-  create_table "review_product", force: :cascade do |t|
+  create_table "reviews", force: :cascade do |t|
     t.integer "product_id"
     t.string "name"
     t.integer "rating"
