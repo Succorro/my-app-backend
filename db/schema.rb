@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2023_06_19_003638) do
 
   create_table "cart_products", force: :cascade do |t|
     t.integer "product_id"
-    t.integer "cart_id"
+    t.integer "shopping_cart_id"
     t.integer "qty"
   end
 

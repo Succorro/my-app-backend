@@ -16,6 +16,13 @@ class ApplicationController < Sinatra::Base
     products.to_json
   end
 
+  get '/products/:id' do
+    products = Product.find(params[:id])
+
+    # include associated reviews in the JSON response
+    products.to_json(include: :reviews)
+  end
+
   get "/reviews" do 
     reviews = Review.all 
     reviews.to_json
@@ -26,9 +33,11 @@ class ApplicationController < Sinatra::Base
     cartProducts.to_json
   end
 
-  get "cart" do 
-    cart = ShoppingCart.all
-    cart.to_json
+  get "/cart" do 
+    cart = ShoppingCart.find(1)
+    cart.to_json(include: { cart_products: { include: :product} })
   end
-  
+
+ 
+
 end

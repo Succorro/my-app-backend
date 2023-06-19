@@ -87,12 +87,12 @@ ProductCategory.create(name: "Bucket Hats")
 
 CartProduct.create(
     product_id: 5,
-    cart_id: 1,
+    shopping_cart_id: 1,
     qty: 3,
   )
 CartProduct.create(
     product_id: 2,
-    cart_id: 1,
+    shopping_cart_id: 1,
     qty: 1,
   )
 ShoppingCart.create(total: 0)
