@@ -20,15 +20,13 @@ ActiveRecord::Schema.define(version: 2023_06_19_003638) do
 
   create_table "product_categories", force: :cascade do |t|
     t.string "name"
-    t.string "desc"
+    t.string "image_url"
   end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.string "desc"
     t.string "color"
-    t.string "size"
-    t.string "type"
     t.integer "price"
     t.integer "product_category_id"
   end
