@@ -97,5 +97,5 @@ puts "🌱 Seeding spices..."
     cart_id: 1,
     qty: 1,
   )
-  Cart.create(total: null)
+  ShoppingCart.create(total: 0)
 puts "✅ Done seeding!"
