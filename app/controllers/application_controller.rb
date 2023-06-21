@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
 
   get "/categories" do 
     categories = ProductCategory.all
-    categories.to_json(include: {products:{include: {reviews:{only: [:rating, :name]}}}})
+    categories.to_json(include: {products:{include: {reviews:{only: [:rating, :name, :created_at]}}}})
   end
 
   get "/products" do 
