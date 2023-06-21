@@ -12,78 +12,71 @@ puts "🌱 Seeding spices..."
 Product.create(
   name: Faker::Superhero.suffix,
   desc: "High Quality",
-  color: Faker::Color.color_name,
+  image_url: "/Images/Hat.jpg",
   price: Faker::Number.between(from: 10, to: 30),
   product_category_id: 1
 )
 Product.create(
   name: Faker::Superhero.suffix,
   desc: "High Quality",
-  color: Faker::Color.color_name,
+  image_url: "/Images/Hat.jpg",
   price: Faker::Number.between(from: 10, to: 30),
   product_category_id: 1
 )
 Product.create(
   name: Faker::Superhero.suffix,
   desc: "High Quality",
-  color: Faker::Color.color_name,
+  image_url: "/Images/Hat.jpg",
   price: Faker::Number.between(from: 10, to: 30),
   product_category_id: 1
 )
 Product.create(
   name: Faker::Superhero.suffix,
   desc: "High Quality",
-  color: Faker::Color.color_name,
+  image_url: "/Images/Beanie.jpg",
   price: Faker::Number.between(from: 10, to: 30),
   product_category_id: 2
 )
 Product.create(
   name: Faker::Superhero.suffix,
   desc: "High Quality",
-  color: Faker::Color.color_name,
+  image_url: "/Images/Beanie.jpg",
   price: Faker::Number.between(from: 10, to: 30),
   product_category_id: 2
 )
 Product.create(
   name: Faker::Superhero.suffix,
   desc: "High Quality",
-  color: Faker::Color.color_name,
+  image_url: "/Images/Beanie.jpg",
   price: Faker::Number.between(from: 10, to: 30),
   product_category_id: 2
 )
 Product.create(
   name: Faker::Superhero.suffix,
   desc: "High Quality",
-  color: Faker::Color.color_name,
-  price: Faker::Number.between(from: 10, to: 30),
-  product_category_id: 2
-)
-Product.create(
-  name: Faker::Superhero.suffix,
-  desc: "High Quality",
-  color: Faker::Color.color_name,
+  image_url: "/Images/BucketHat.jpeg",
   price: Faker::Number.between(from: 10, to: 30),
   product_category_id: 3
 )
 Product.create(
   name: Faker::Superhero.suffix,
   desc: "High Quality",
-  color: Faker::Color.color_name,
+  image_url: "/Images/BucketHat.jpeg",
   price: Faker::Number.between(from: 10, to: 30),
   product_category_id: 3
 )
 Product.create(
   name: Faker::Superhero.suffix,
   desc: "High Quality",
-  color: Faker::Color.color_name,
+  image_url: "/Images/BucketHat.jpeg",
   price: Faker::Number.between(from: 10, to: 30),
   product_category_id: 3
 )
 
 
-ProductCategory.create(name: "Hats", image_url: "/Images/Hat.jpg")
-ProductCategory.create(name: "Beanies", image_url: "/Images/Beanie.jpg")
-ProductCategory.create(name: "Bucket Hats", image_url: "/Images/BucketHat.jpeg")
+ProductCategory.create(name: "Hats")
+ProductCategory.create(name: "Beanies")
+ProductCategory.create(name: "Bucket Hats")
 
 CartProduct.create(
     product_id: 5,
