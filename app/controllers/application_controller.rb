@@ -30,14 +30,22 @@ class ApplicationController < Sinatra::Base
 
   get "/cart_products" do 
     cartProducts = CartProduct.all 
-    cartProducts.to_json
+    cartProducts.to_json(include: :product)
   end
+
+  
 
   get "/cart" do 
     cart = ShoppingCart.find(1)
     cart.to_json(include: { cart_products: { include: :product} })
   end
 
- 
+  patch '/cart_products/:id' do 
+    cartProduct = CartProduct.find(params[:id])
+    cartProduct.update(
+      qty: params[:qty]
+    )
+    cartProduct.to_json 
+  end
 
 end
