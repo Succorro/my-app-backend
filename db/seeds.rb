@@ -20,7 +20,7 @@ Product.create(
   name: Faker::Superhero.suffix,
   desc: "High Quality",
   image_url: "/Images/Hat.jpg",
-  price: Faker::Number.between(from: 10, to: 30),
+  price: 20,
   product_category_id: 1
 )
 Product.create(
@@ -41,7 +41,7 @@ Product.create(
   name: Faker::Superhero.suffix,
   desc: "High Quality",
   image_url: "/Images/Beanie.jpg",
-  price: Faker::Number.between(from: 10, to: 30),
+  price: 10,
   product_category_id: 2
 )
 Product.create(
@@ -82,11 +82,13 @@ CartProduct.create(
     product_id: 5,
     shopping_cart_id: 1,
     qty: 3,
+    product_price: 10
   )
 CartProduct.create(
     product_id: 2,
     shopping_cart_id: 1,
     qty: 1,
+    product_price: 20
   )
 ShoppingCart.create(total: 0)
 puts "✅ Done seeding!"
