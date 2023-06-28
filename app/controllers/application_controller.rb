@@ -39,7 +39,8 @@ class ApplicationController < Sinatra::Base
     cartProduct = CartProduct.create(
       product_id: params[:product_id],
       shopping_cart_id: params[:shopping_cart_id],
-      qty: params[:qty]
+      qty: params[:qty],
+      product_price: params[:product_price]
     )
     cartProduct.to_json
   end
