@@ -9,7 +9,7 @@ class ApplicationController < Sinatra::Base
   get "/reviews" do 
     reviews = Review.all 
     reviews.to_json
-  end 
+  end
 
   post '/reviews' do 
     reviews = Review.create(
