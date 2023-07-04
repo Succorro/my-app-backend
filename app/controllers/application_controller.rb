@@ -3,12 +3,7 @@ class ApplicationController < Sinatra::Base
 
   get "/categories" do 
     categories = ProductCategory.all
-    categories.to_json(include: {products:{include: {reviews:{only: [:id, :rating, :name, :created_at]}}}})
-  end
-
-  get '/products/:id' do
-    products = Product.find(params[:id])
-    products.to_json(include: :reviews)
+    categories.to_json(include: :products)
   end
 
   get "/reviews" do 
@@ -36,7 +31,7 @@ class ApplicationController < Sinatra::Base
       product_id: params[:product_id],
       shopping_cart_id: params[:shopping_cart_id],
       qty: params[:qty],
-      product_price: params[:product_price]
+      product_price: params[:product_price],
     )
     cartProduct.to_json
   end
