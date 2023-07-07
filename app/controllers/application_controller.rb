@@ -3,7 +3,7 @@ class ApplicationController < Sinatra::Base
 
   get "/products" do 
     categories = Product.all
-    categories.to_json
+    categories.to_json(include: :reviews)
   end
 
   get "/reviews" do 
@@ -37,7 +37,8 @@ class ApplicationController < Sinatra::Base
   patch '/carts/:id' do 
     cartProduct = Cart.find(params[:id])
     cartProduct.update(
-      qty: params[:qty]
+      qty: params[:qty],
+      total: params[:total]
     )
     cartProduct.to_json 
   end

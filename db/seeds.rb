@@ -76,11 +76,11 @@ Product.create(
 Cart.create(
   product_id: 5,
   qty: 3,
-  total: 0
+  total: 30
 )
 Cart.create(
   product_id: 2,
   qty: 1,
-  total: 0
+  total: 20
 )
 puts "✅ Done seeding!"
