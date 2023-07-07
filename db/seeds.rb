@@ -78,17 +78,14 @@ ProductCategory.create(name: "Hats")
 ProductCategory.create(name: "Beanies")
 ProductCategory.create(name: "Bucket Hats")
 
-CartProduct.create(
-    product_id: 5,
-    shopping_cart_id: 1,
-    qty: 3,
-    product_price: 10
-  )
-CartProduct.create(
-    product_id: 2,
-    shopping_cart_id: 1,
-    qty: 1,
-    product_price: 20
-  )
-ShoppingCart.create(total: 0)
+Cart.create(
+  product_id: 5,
+  qty: 3,
+  total: 0
+)
+Cart.create(
+  product_id: 2,
+  qty: 1,
+  total: 0
+)
 puts "✅ Done seeding!"

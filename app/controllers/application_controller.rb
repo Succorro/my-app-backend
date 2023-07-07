@@ -20,32 +20,30 @@ class ApplicationController < Sinatra::Base
     reviews.to_json 
   end
 
-
-  get "/cart_products" do 
-    cartProducts = CartProduct.all 
-    cartProducts.to_json(include: :product)
+  get "/carts" do 
+  carts = Cart.all 
+  carts.to_json(include: :product)
   end
 
-  post "/cart_products" do 
-    cartProduct = CartProduct.create(
+  post "/carts" do 
+    cartProduct = Cart.create(
       product_id: params[:product_id],
-      shopping_cart_id: params[:shopping_cart_id],
       qty: params[:qty],
-      product_price: params[:product_price],
+      total: params[:total]
     )
     cartProduct.to_json
   end
 
-  patch '/cart_products/:id' do 
-    cartProduct = CartProduct.find(params[:id])
+  patch '/carts/:id' do 
+    cartProduct = Cart.find(params[:id])
     cartProduct.update(
       qty: params[:qty]
     )
     cartProduct.to_json 
   end
 
-  delete "/cart_products/:id" do 
-    cartProduct = CartProduct.find(params[:id])
+  delete "/carts/:id" do 
+    cartProduct = Cart.find(params[:id])
     cartProduct.destroy
     cartProduct.to_json
   end

@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_26_204952) do
+ActiveRecord::Schema.define(version: 2023_07_07_213637) do
 
-  create_table "cart_products", force: :cascade do |t|
+  create_table "carts", force: :cascade do |t|
     t.integer "product_id"
-    t.integer "shopping_cart_id"
     t.integer "qty"
-    t.integer "product_price"
+    t.integer "total"
   end
 
   create_table "product_categories", force: :cascade do |t|
@@ -37,10 +36,6 @@ ActiveRecord::Schema.define(version: 2023_06_26_204952) do
     t.integer "rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "shopping_carts", force: :cascade do |t|
-    t.integer "total"
   end
 
 end
