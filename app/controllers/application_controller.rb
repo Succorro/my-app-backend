@@ -1,9 +1,9 @@
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
 
-  get "/categories" do 
-    categories = ProductCategory.all
-    categories.to_json(include: :products)
+  get "/products" do 
+    categories = Product.all
+    categories.to_json
   end
 
   get "/reviews" do 
