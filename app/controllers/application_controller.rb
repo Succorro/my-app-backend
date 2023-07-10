@@ -6,11 +6,6 @@ class ApplicationController < Sinatra::Base
     categories.to_json(include: :reviews)
   end
 
-  get "/reviews" do 
-    reviews = Review.all 
-    reviews.to_json
-  end
-
   post '/reviews' do 
     reviews = Review.create(
       product_id: params[:product_id],
