@@ -6,6 +6,17 @@ class ApplicationController < Sinatra::Base
     categories.to_json(include: :reviews)
   end
 
+  post "/products" do 
+    product = Product.create(
+      name: params[:name],
+      desc: params[:desc],
+      price: params[:price], 
+      image_url: params[:image_url],
+      category: params[:category]
+    )
+    product.to_json
+  end
+
   post '/reviews' do 
     reviews = Review.create(
       product_id: params[:product_id],
