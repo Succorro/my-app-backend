@@ -2,8 +2,8 @@ class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
 
   get "/products" do 
-    categories = Product.all
-    categories.to_json(include: :reviews)
+    products = Product.all
+    products.to_json(include: :reviews)
   end
 
   post "/products" do 
@@ -26,34 +26,18 @@ class ApplicationController < Sinatra::Base
     reviews.to_json 
   end
 
-  get "/carts" do 
-  carts = Cart.all 
-  carts.to_json(include: :product)
-  end
-
-  post "/carts" do 
-    cartProduct = Cart.create(
-      product_id: params[:product_id],
-      qty: params[:qty],
-      total: params[:total]
+  patch '/reviews/:id' do 
+    review = Review.find(params[:id])
+    review.update(
+      rating: params[:rating]
     )
-    cartProduct.to_json
+    review.to_json
   end
 
-  patch '/carts/:id' do 
-    cartProduct = Cart.find(params[:id])
-    cartProduct.update(
-      qty: params[:qty],
-      total: params[:total]
-    )
-    cartProduct.to_json 
+  delete "/reviews/:id" do 
+    review = Review.find(params[:id])
+    review.destroy
+    review.to_json
   end
-
-  delete "/carts/:id" do 
-    cartProduct = Cart.find(params[:id])
-    cartProduct.destroy
-    cartProduct.to_json
-  end
-
 
 end

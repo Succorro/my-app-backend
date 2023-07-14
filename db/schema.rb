@@ -10,13 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_07_07_223440) do
-
-  create_table "carts", force: :cascade do |t|
-    t.integer "product_id"
-    t.integer "qty"
-    t.integer "total"
-  end
+ActiveRecord::Schema.define(version: 2023_07_14_021916) do
 
   create_table "products", force: :cascade do |t|
     t.string "name"

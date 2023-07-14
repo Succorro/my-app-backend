@@ -72,15 +72,4 @@ Product.create(
   price: Faker::Number.between(from: 10, to: 30),
   category: "Bucket Hat"
 )
-
-Cart.create(
-  product_id: 5,
-  qty: 3,
-  total: 30
-)
-Cart.create(
-  product_id: 2,
-  qty: 1,
-  total: 20
-)
 puts "✅ Done seeding!"

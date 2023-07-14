@@ -1,5 +1,3 @@
-class Product < ActiveRecord::Base 
-    belongs_to :product_category
+class Product < ActiveRecord::Base
     has_many :reviews
-    has_many :carts
 end
